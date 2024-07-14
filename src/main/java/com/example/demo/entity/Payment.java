@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -21,5 +22,8 @@ public class Payment {
     private String paymentStatus;
     private String paymentAmount;
     private LocalDateTime paymentTime;
-    private UUID userId;
+
+    @ManyToOne
+    private CustomerInfo customerInfo;
+    private String pidx;
 }
